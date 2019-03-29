@@ -1,0 +1,35 @@
+.selections {
+    display: flex;
+    justify-content: space-evenly;
+    
+    align-items: center;
+    
+}
+
+.stats-container {
+    width:50%;
+}
+
+.top-selections{
+    flex-grow:1;
+}
+
+.left-selection {
+    flex-grow:1;
+    max-width: 200px;
+
+}
+
+.right-selection {
+    flex-grow:1;
+    max-width: 200px;
+}
+
+.left-graph {
+    width:45%;
+
+}
+
+.right-graph {
+    width:45%;
+}
