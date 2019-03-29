@@ -1,13 +1,21 @@
+body {
+    background-color: #F5F5F5;
+}
+
 .selections {
     display: flex;
     justify-content: space-evenly;
-    
+    margin:10px;
     align-items: center;
     
 }
 
 .stats-container {
     width:50%;
+}
+
+.table-header {
+    font-size:14px;
 }
 
 .top-selections{
@@ -27,9 +35,10 @@
 
 .left-graph {
     width:45%;
-
+    margin:5px;
 }
 
 .right-graph {
     width:45%;
+    margin:5px;
 }
