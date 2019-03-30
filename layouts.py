@@ -57,11 +57,36 @@ bonanza_sellers = html.Div(
                                     html.Td([emoji.emojize(':whale: Whale', use_aliases=True)]),
                                 ]),
                                 html.Tr([
-                                    html.Td(['%winning booths']),
-                                    html.Td([emoji.emojize(':fishing_pole_and_fish: 10%', use_aliases=True)]),
-                                    html.Td([emoji.emojize(':fish: 15%', use_aliases=True)]),
-                                    html.Td([emoji.emojize(':dolphin: 20%', use_aliases=True)]),
-                                    html.Td([emoji.emojize(':whale: 30%', use_aliases=True)]),
+                                    html.Td([emoji.emojize(':smile: # of booths', use_aliases=True)]),
+                                    html.Td(id='l-minnow-count'),
+                                    html.Td(id='l-sea-bass-count'),
+                                    html.Td(id='l-dolphin-count'),
+                                    html.Td(id='l-whale-count'),
+                                    
+                                ]),
+                                html.Tr([
+                                    html.Td([emoji.emojize(':tada: % winning booths', use_aliases=True)]),
+                                    html.Td(id='l-minnow-winning'),
+                                    html.Td(id='l-sea-bass-winning'),
+                                    html.Td(id='l-dolphin-winning'),
+                                    html.Td(id='l-whale-winning'),
+                                    
+                                ]),
+                                html.Tr([
+                                    html.Td([emoji.emojize(':money_bag: avg profit per seller', use_aliases=True)]),
+                                    html.Td(id='l-minnow-dps'),
+                                    html.Td(id='l-sea-bass-dps'),
+                                    html.Td(id='l-dolphin-dps'),
+                                    html.Td(id='l-whale-dps'),
+                                    
+                                ]),
+                                html.Tr([
+                                    html.Td([emoji.emojize(':money_bag: median profit per seller', use_aliases=True)]),
+                                    html.Td(id='l-minnow-median-dps'),
+                                    html.Td(id='l-sea-bass-median-dps'),
+                                    html.Td(id='l-dolphin-median-dps'),
+                                    html.Td(id='l-whale-median-dps'),
+                                    
                                 ]),
                             ]),
                         html.P(id='left-winning'),
@@ -101,8 +126,9 @@ bonanza_sellers = html.Div(
                 html.Div(
                     className='left-selection',
                     children=[
-                        html.P([d + '1' + ":", dcc.Dropdown(id="left_"+d, options=bs.col_options)])
-                        for d in bs.scatter_dimensions[:-1]
+                        html.P(["x:", dcc.Dropdown(id="left_x", options=bs.col_options, value="days_as_user")]),
+                        html.P(["y:", dcc.Dropdown(id="left_y", options=bs.col_options, value = "profit_estimate")]),
+                        html.P(["color:", dcc.Dropdown(id="left_color", options=bs.col_options, value = "value_em")]),
                     ],   
                 ),
                 dcc.Graph(
@@ -111,8 +137,9 @@ bonanza_sellers = html.Div(
                 html.Div(
                     className='right-selection',
                     children=[
-                        html.P([d + '2' + ":", dcc.Dropdown(id="right_"+d, options=bs.col_options)])
-                        for d in bs.scatter_dimensions[:-1]
+                        html.P(["x:", dcc.Dropdown(id="right_x", options=bs.col_options, value = "days_as_user")]),
+                        html.P(["y:", dcc.Dropdown(id="right_y", options=bs.col_options, value = "profit_estimate")]),
+                        html.P(["color:", dcc.Dropdown(id="right_color", options=bs.col_options, value = "value_em")]),
                     ],
                 ),
                 dcc.Graph(
