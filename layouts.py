@@ -6,7 +6,7 @@ from data import bonanza_sellers
 bs = bonanza_sellers()
 dff = bs.df
 
-'''Header'''
+#Header
 
 bonanza_sellers = html.Div(
     children=[
@@ -184,7 +184,7 @@ bonanza_sellers = html.Div(
         html.Div(id='right_df', style={'display':'none'}),
 
 
-        #Left Table
+#Left Table
         html.Div(
             className='tables',
             children = [
@@ -211,10 +211,10 @@ bonanza_sellers = html.Div(
                                 ]),
                                 html.Tr([
                                     html.Td([emoji.emojize(':tada: # of days to first sale', use_aliases=True)]),
-                                    html.Td(id='l-minnow-winning'),
-                                    html.Td(id='l-sea-bass-winning'),
-                                    html.Td(id='l-dolphin-winning'),
-                                    html.Td(id='l-whale-winning'),
+                                    html.Td(id='l-minnow-first-sale'),
+                                    html.Td(id='l-sea-bass-first-sale'),
+                                    html.Td(id='l-dolphin-first-sale'),
+                                    html.Td(id='l-whale-first-sale'),
                                     
                                 ]),
                                 html.Tr([
@@ -267,10 +267,10 @@ bonanza_sellers = html.Div(
                                 ]),
                                 html.Tr([
                                     html.Td([emoji.emojize(':tada: # of days to first sale', use_aliases=True)]),
-                                    html.Td(id='r-minnow-winning'),
-                                    html.Td(id='r-sea-bass-winning'),
-                                    html.Td(id='r-dolphin-winning'),
-                                    html.Td(id='r-whale-winning'),
+                                    html.Td(id='r-minnow-first_sale'),
+                                    html.Td(id='r-sea-bass-first-sale'),
+                                    html.Td(id='r-dolphin-first-sale'),
+                                    html.Td(id='r-whale-first-sale'),
                                     
                                 ]),
                                 html.Tr([
