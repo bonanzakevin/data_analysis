@@ -2,13 +2,14 @@ import dash_core_components as dcc
 import dash_html_components as html
 import emoji
 
-from data import bonanza_sellers
-bs = bonanza_sellers()
+from data import BonanzaSellers
+bs = BonanzaSellers()
 dff = bs.df
 
 #Header
 
 bonanza_sellers = html.Div(
+    className='parallax',
     children=[
         html.Div(
             className="header",
@@ -20,14 +21,14 @@ bonanza_sellers = html.Div(
                         html.Div(
                             className='top-selections',
                             children=[
-                                html.P([dcc.Dropdown(id="left_category", options=bs.category_options, value='fashion')])
+                                html.P([dcc.Dropdown(id="left_category", options=bs.category_options, value='Fashion')])
                             ],
                         ),
                         
                         html.Div(
                             className='top-selections',
                             children=[
-                                html.P([dcc.Dropdown(id="right_category", options=bs.category_options, value='parts_accessories')])
+                                html.P([dcc.Dropdown(id="right_category", options=bs.category_options, value='Parts & Accessories')])
                             ],
                             
                         ),
@@ -59,6 +60,65 @@ bonanza_sellers = html.Div(
                         html.P(id='r_category_name')
                     ]
                 ),
+            ]
+        ),
+        html.Div(
+            className='box-chart',
+            children=[
+                dcc.Graph(
+                    id = 'orders-items'),
+                ]),
+
+        html.Div(
+            className='facts-bar',
+            children=[
+                html.Div(
+                    className='fact',
+                    children=[
+                        html.P(className='fact-label', children=['March 2019']),
+                    ]
+                ),
+                html.Div(
+                    className='fact',
+                    children=[
+                        html.P(className='fact-value', id='left-num-sellers'),
+                        html.P(className='fact-label', children=['Number of Sellers']),
+                        html.P(className='fact-value', id='right-num-sellers')
+                    ]
+                ),
+                html.Div(
+                    className='fact',
+                    children=[
+                        html.P(className='fact-value', id='left-order-value'),
+                        html.P(className='fact-label', children=['Average Order Value']),
+                        html.P(className='fact-value', id='right-order-value')
+                    ]
+                ),
+                html.Div(
+                    className='fact',
+                    children=[
+                        html.P(className='fact-value', id='left-num-orders'),
+                        html.P(className='fact-label', children=['Average # Orders']),
+                        html.P(className='fact-value', id='right-num-orders')
+                    ]
+                ),
+                html.Div(
+                    className='fact',
+                    children=[
+                        html.P(className='fact-value', id='left-fvf-per-seller'),
+                        html.P(className='fact-label', children=['Average FVF']),
+                        html.P(className='fact-value', id='right-fvf-per-seller')
+                    ]
+                ),
+                html.Div(
+                    className='fact',
+                    children=[
+                        html.P(className='fact-value', id='left-gmv-per-seller'),
+                        html.P(className='fact-label', children=['Average GMV']),
+                        html.P(className='fact-value', id='right-gmv-per-seller')
+                    ]
+                ),
+                
             ]
         ),
         
@@ -113,8 +173,6 @@ bonanza_sellers = html.Div(
                                     
                                 ]),
                             ]),
-                        html.P(id='left-winning'),
-                        html.P(id='left-value-em'),
                     ]
                 ),
 
@@ -165,8 +223,6 @@ bonanza_sellers = html.Div(
                                     
                                 ]),
                             ]),
-                        html.P(id='right-winning'),
-                        html.P(id='right-value-em'),
                     ]
                 ),
             ]),
@@ -234,17 +290,10 @@ bonanza_sellers = html.Div(
                                     
                                 ]),
                             ]),
-                        html.P(id='left-winning'),
-                        html.P(id='left-value-em'),
                     ]
                 ),
-            ]),
-
 #Right Table
-        html.Div(
-            className='tables',
-            children = [
-                html.Div(
+            html.Div(
                     className='table',
                     children=[
                         html.Table([
@@ -267,14 +316,14 @@ bonanza_sellers = html.Div(
                                 ]),
                                 html.Tr([
                                     html.Td([emoji.emojize(':tada: # of days to first sale', use_aliases=True)]),
-                                    html.Td(id='r-minnow-first_sale'),
+                                    html.Td(id='r-minnow-first-sale'),
                                     html.Td(id='r-sea-bass-first-sale'),
                                     html.Td(id='r-dolphin-first-sale'),
                                     html.Td(id='r-whale-first-sale'),
                                     
                                 ]),
                                 html.Tr([
-                                    html.Td([emoji.emojize(':money_bag: # of orders', use_aliases=True)]),
+                                    html.Td([emoji.emojize(':money_bag: # of orders this month', use_aliases=True)]),
                                     html.Td(id='r-minnow-orders'),
                                     html.Td(id='r-sea-bass-orders'),
                                     html.Td(id='r-dolphin-orders'),
@@ -290,11 +339,12 @@ bonanza_sellers = html.Div(
                                     
                                 ]),
                             ]),
-                        html.P(id='right-winning'),
-                        html.P(id='right-value-em'),
                     ]
                 ),
+            ]),
+
+
+        
         
 
         ])
-    ])
