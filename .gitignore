@@ -1,7 +1,8 @@
 *.DS_Store
 secrets.py
-
+data_env/
 csv/
+settings.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
