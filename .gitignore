@@ -2,6 +2,7 @@
 secrets.py
 data_env/
 csv/
+data_analysis_env/
 settings.json
 # Byte-compiled / optimized / DLL files
 __pycache__/
