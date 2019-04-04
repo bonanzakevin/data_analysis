@@ -9,7 +9,7 @@ dff = bs.df
 #Header
 
 bonanza_sellers = html.Div(
-    className='parallax',
+    className='main',
     children=[
         html.Div(
             className="header",

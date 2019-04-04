@@ -1,7 +1,8 @@
 body, html {
     height:100%;
     font-family: Roboto;
-    background-color: #3aafa9
+    background-color: #325164;
+    
 }
 
 /* .parallax {
@@ -13,6 +14,7 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 } */
+
 
 .header {
     background-color: white;
@@ -62,6 +64,7 @@ body, html {
     flex-direction: column;
     align-items: center;
     height:250px;
+    margin:5px;
 }
 
 .fact {
@@ -144,7 +147,8 @@ body, html {
 
 .word-cloud {
     display:flex;
-
+    justify-content: center;
     align-self: center;
     height: 600px;
+    margin:0 auto;
 }
