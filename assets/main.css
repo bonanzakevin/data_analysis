@@ -141,3 +141,10 @@ body, html {
     margin:10px;
     
 }
+
+.word-cloud {
+    display:flex;
+
+    align-self: center;
+    height: 600px;
+}

@@ -8,6 +8,7 @@ from emojis import Emojis
 
 from app import app
 from data import BonanzaSellers, CategoryTableData, Facts
+
 bs = BonanzaSellers()
 df = bs.df
 em = Emojis()

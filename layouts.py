@@ -240,6 +240,10 @@ bonanza_sellers = html.Div(
         html.Div(id='right_df', style={'display':'none'}),
 
 
+#Word Cloud
+        html.Img(src="./assets/bonz_word_cloud_clear.png", className="word-cloud"),
+
+
 #Left Table
         html.Div(
             className='tables',
