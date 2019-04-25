@@ -2,6 +2,7 @@
 secrets.py
 data_env/
 
+.vs_code
 data_analysis_env/
 settings.json
 # Byte-compiled / optimized / DLL files
